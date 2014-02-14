@@ -13,7 +13,7 @@ Author
 Christopher Kelley<br/>
 [tsukumokun@icloud.com]
 
-Till Smejkal
+Till Smejkal<br/>
 [till.smejkal@gmail.com]
 
 Notes from the Authors
