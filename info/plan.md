@@ -112,6 +112,22 @@ DeveloperLaptop
 DeveloperDesktop
 DeveloperServer
 
+Purchasables
+----------
+Exception catchers
+Something to upgrade probability of getting switches
+Programs (need to load into memory)
+
+
+
+Enemies
+----------
+Bugs
+Viruses
+Exceptions - out of bounds - momentarily freezes
+Interrupts - SIGSEG - sucks for you (only from CPU)
+Glitches
+
 
 Fighting Mechanics
 ==========
@@ -128,8 +144,6 @@ Bug spawner of sorts
 Travel the system bus (maybe encounter viruses)
 Defeat all bugs and generator and take down cpu to win
 
-GPU Fighting mechanic
-----------
 
 
 Memory Fighting mechanic
@@ -143,16 +157,22 @@ Storage Gaining mechanic
 ----------
 Time based - gain more with time owned PC (Decrypting)
 
+Travel
+==========
 
-Purchasables
-----------
-Exception catchers
+Network lines
+System bus
 
-Enemies
+pFuture
+==========
+
+GPU Fighting mechanic
 ----------
-Bugs
-Viruses
-Exceptions - out of bounds - momentarily freezes
-Interrupts - SIGSEG - sucks for you (only from CPU)
-Glitches
+Fighting graphics (bill gates face - throws money)
+
+Drone mechanic
+----------
+attach drones to network to collect bits
+fighter drones
+defence drones
 
