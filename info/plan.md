@@ -7,6 +7,7 @@ Network Map
  - Then can see adjacent 4 network lines
  - Can fight through line to see that computer (gain access to network card)
  - Access to this card will be shut down after a while if you do not own the computer
+ - Can't know what you are fighting until you get to it
 
 Start
 ----------
@@ -79,4 +80,79 @@ as well as network card! (Are you sure you want to turn off your pc?)
 
 Components
 ----------
+
+Devices
+----------
+All have network cards
+Toaster - nothing connected (achievement oriented)
+Microwave - nothing connected (achievement oriented)
+Lightbulb - nothing connected (achievement oriented)
+Switch - opens all 8 around it
+Mobile Phone - CPU - Storage
+ - Windows
+ - Android
+ - iPhone
+ - 3rd party
+Latops
+ - Windows - loCPU - loNet - hiStor - hiGPU
+ - Chrome Book - loCPU - hiNet - loStor - loGPU
+ - Apple - hiCPU - Net - Stor - loGPU
+Desktops
+ - Same as above
+Servers
+ - Dell
+ - HP
+ - [Fill this out]
+Racks 
+DataCenter
+SuperComputer
+
+DeveloperPhone
+DeveloperLaptop
+DeveloperDesktop
+DeveloperServer
+
+
+Fighting Mechanics
+==========
+
+Network Fighting mechanic
+----------
+Linear
+Only viruses
+Firewall at end
+
+CPU Fighting mechanic
+----------
+Bug spawner of sorts
+Travel the system bus (maybe encounter viruses)
+Defeat all bugs and generator and take down cpu to win
+
+GPU Fighting mechanic
+----------
+
+
+Memory Fighting mechanic
+----------
+Fighting memory cells
+Each cell has low health
+but when broken may release an enemy (see below)
+Can just take a portion of memory not all.
+
+Storage Gaining mechanic
+----------
+Time based - gain more with time owned PC (Decrypting)
+
+
+Purchasables
+----------
+Exception catchers
+
+Enemies
+----------
+Bugs
+Viruses
+Exceptions - out of bounds - momentarily freezes
+Interrupts - SIGSEG - sucks for you (only from CPU)
+Glitches
 
