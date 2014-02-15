@@ -29,7 +29,7 @@ function Base()
 		return uuid;
 	}
 
-	this.str 		= function()
+	this.print 		= function()
 	{
 		return "[Object UUID="+uuid+"]";
 	}

@@ -35,10 +35,25 @@
 </head>
 <body id="ht-poc">
   <script>
-  
+
   var a = new Base();
   var b = new Base();
   var c = new Base();
+
+
+  function Child(){
+    this.print = function(){
+      INFO("ima child");
+    }
+  }
+  Child.prototype = new Base();
+
+  var d = new Child();
+d.print();
+  ERROR(d.instanceof(Base));
+  ERROR(d.instanceof(Child));
+  ERROR(a.instanceof(Child));
+
   </script>
 </body>
 </html>
