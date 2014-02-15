@@ -21,24 +21,24 @@
 
 function Base()
 {
-	var uuid 		= guid();
-	INFO("UUID generated: "+uuid);
+	WARN("Base Ctor");
+	this.m_uuid = guid();
+}
 
-	this.getUUID 	= function()
-	{
-		return uuid;
-	}
+Base.prototype.uuid = function(){
+	return this.m_uuid;
+}
 
-	this.print 		= function()
-	{
-		return "[Object UUID="+uuid+"]";
-	}
+Base.prototype.str = function()
+{
+	return "Not Implemented";
+}
 
-	this.instanceof = function(constructor){
+Base.prototype.instanceof = function(constructor)
+{
+	var obj = this;
 
-		var obj = this;
-
-		while (obj!=null)
+		while (obj != null)
 		{
 			if (obj == constructor.prototype)
 				return true;
@@ -46,5 +46,4 @@ function Base()
 		}
 
 		return false;
-	}
 }

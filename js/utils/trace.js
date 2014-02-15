@@ -74,10 +74,12 @@ else if(BROWSER_FIREFOX){
 		var file = trace.substring(trace.lastIndexOf("/")+1);
 		file = file.substring(0,file.indexOf(":"));
 
-		if (window.console && (window.console.firebug || window.console.exception))
+		if (window.console && (window.console.firebug || window.console.exception)){
 			console.log("%c"+type+" @ "+file+" ["+func+"]("+line+"): "+message,css);
-		else
+		}else{
+			console.log("For better logging please use Firebug!");
 			console.log(type+" @ "+file+" ["+func+"]("+line+"): "+message);
+		}
 
 	}
 }
