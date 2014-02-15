@@ -17,34 +17,22 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: trace.js guid.js
+var BROWSER_CHROME = false;
+var BROWSER_SAFARI = false;
+var BROWSER_UNKNOWN= false;
 
-function Base()
-{
-	var uuid 		= guid();
-	INFO("UUID generated: "+uuid);
-
-	this.getUUID 	= function()
-	{
-		return uuid;
+function browser(){
+	if(navigator.appVersion.indexOf("Chrome")>0){
+	 	BROWSER_CHROME=true;
+		return "Chrome";
+	}else if(navigator.appVersion.indexOf("Safari")>0){
+		BROWSER_SAFARI=true;
+		return "Safari";
+	}else{ 
+		BROWSER_UNKNOWN=true;
+		return "unknown";
 	}
 
-	this.str 		= function()
-	{
-		return "[Object UUID="+uuid+"]";
-	}
-
-	this.instanceof = function(constructor){
-
-		var obj = this;
-
-		while (obj!=null)
-		{
-			if (obj == constructor.prototype)
-				return true;
-			obj = obj.__proto__;
-		}
-
-		return false;
-	}
 }
+
+var BROWSER = browser();
