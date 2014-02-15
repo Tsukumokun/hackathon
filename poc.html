@@ -24,12 +24,15 @@
   <!-- External Libs -->
   
   <!-- Internal Libs -->
-  
+
   <script src="js/utils/guid.js"></script>
+  <script src="js/utils/base.js"></script>
 </head>
 <body id="ht-poc">
   <script>
-  console.log(guid());
+    var a = new Base();
+
+    console.log(a.instanceof(Base));
   </script>
 </body>
 </html>

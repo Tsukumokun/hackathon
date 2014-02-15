@@ -16,3 +16,34 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
+
+//REQUIRE: guid.js
+
+function Base()
+{
+	var uuid 		= guid();
+
+	this.getUUID 	= function()
+	{
+		return uuid;
+	}
+
+	this.str 		= function()
+	{
+		return "[Object UUID="+uuid+"]";
+	}
+
+	this.instanceof = function(constructor){
+
+		var obj = this;
+
+		while (obj!=null)
+		{
+			if (obj == constructor.prototype)
+				return true;
+			obj = obj.__proto__;
+		}
+
+		return false;
+	}
+}
