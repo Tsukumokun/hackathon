@@ -20,29 +20,67 @@
 //REQUIRE: browser.js
 
 function getErrorObject(){
-    try { throw Error('') } catch(err) { return err; }
+    try { throw Error('') } catch(err) {return err;}
 }
 
-function trace_log(type,message,css){
-	if(BROWSER_UNKNOWN)
-		return;
+var trace_log = function(type,message,css){
+	console.log("Unsupported Browser: "+type+":"+message);
+}
+if(BROWSER_CHROME){
+	trace_log = function(type,message,css){
+		var callbacks = 5;
 
-	var callbacks = 3;
-	if(BROWSER_CHROME)callbacks+=2;
+		var trace = getErrorObject().stack.split("\n")[callbacks];
 
-	var trace = getErrorObject().stack.split("\n")[callbacks];
-	var line = trace.split(":")[2];
+		var line = trace.split(":")[2];
 
-	var func;
+		var func = trace.substring(trace.indexOf("at ")+3,trace.indexOf(" ("));
+		if(trace.indexOf(" (")<1)func="global";
 
-	if(BROWSER_CHROME){
-		func = trace.substring(trace.indexOf("at ")+3,trace.indexOf(" ("));
-	}else if(BROWSER_SAFARI){
-		func = trace.substring(0,trace.indexOf("@"));
+		var file = trace.substring(trace.lastIndexOf("/")+1);
+		file = file.substring(0,file.indexOf(":"));
+
+		console.log("%c"+type+" @ "+file+" ["+func+"]("+line+"): "+message,css);
 	}
-	console.log("%c"+type+" @ "+func+"("+line+"):"+message,css);
 }
+else if(BROWSER_SAFARI){
+	trace_log = function(type,message,css){
+		var callbacks = 3;
 
+		var trace = getErrorObject().stack.split("\n")[callbacks];
+
+		var line = trace.split(":")[2];
+
+		var func = trace.substring(0,trace.indexOf("@"));
+
+		var file = trace.substring(trace.lastIndexOf("/")+1);
+		file = file.substring(0,file.indexOf(":"));
+
+		console.log("%c"+type+" @ "+file+" ["+func+"]("+line+"): "+message,css);
+	}
+}
+else if(BROWSER_FIREFOX){
+	trace_log = function(type,message,css){
+
+		var callbacks = 3;
+
+		var trace = getErrorObject().stack.split("\n")[callbacks];
+
+		var line = trace.split(":")[2];
+
+		var func = trace.substring(0,trace.indexOf("@"));
+		if(func.length<1)func="global";
+
+		var file = trace.substring(trace.lastIndexOf("/")+1);
+		file = file.substring(0,file.indexOf(":"));
+
+		if (window.console && (window.console.firebug || window.console.exception))
+			console.log("%c"+type+" @ "+file+" ["+func+"]("+line+"): "+message,css);
+		else
+			console.log(type+" @ "+file+" ["+func+"]("+line+"): "+message);
+
+	}
+}
 function ERROR 	(message){trace_log("[ERROR] ",message,'color: #E74C3C');}
 function SEVERE	(message){trace_log("[SEVERE]",message,'color: #C0392B');}
 function WARN 	(message){trace_log("[WARN]  ",message,'color: #F1C40F');}
@@ -52,4 +90,6 @@ function NOTE	(message){trace_log("[NOTE]  ",message,'color: #95A5A6');}
 function TODO	(message){trace_log("[TODO]  ",message,'color: #2ECC71');}
 function XXX	(message){trace_log("[XXX]   ",message,'color: #1ABC9C');}
 function TEXT	(message){trace_log("[TEXT]  ",message,'color: #34495E');}
+
+SYSTEM("Tracing Enabled");
 

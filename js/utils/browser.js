@@ -17,22 +17,25 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-var BROWSER_CHROME = false;
-var BROWSER_SAFARI = false;
-var BROWSER_UNKNOWN= false;
+var BROWSER_CHROME  = false;
+var BROWSER_SAFARI  = false;
+var BROWSER_FIREFOX = false;
+var BROWSER_UNKNOWN = false;
 
 function browser(){
-	if(navigator.appVersion.indexOf("Chrome")>0){
+	if(navigator.userAgent.indexOf("Chrome")>0){
 	 	BROWSER_CHROME=true;
 		return "Chrome";
-	}else if(navigator.appVersion.indexOf("Safari")>0){
+	}else if(navigator.userAgent.indexOf("Safari")>0){
 		BROWSER_SAFARI=true;
 		return "Safari";
+	}else if(navigator.userAgent.indexOf("Firefox")>0){
+		BROWSER_FIREFOX=true;
+		return "Firefox";
 	}else{ 
 		BROWSER_UNKNOWN=true;
 		return "unknown";
 	}
-
 }
 
 var BROWSER = browser();
