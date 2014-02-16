@@ -31,7 +31,6 @@
   <script src="js/utils/guid.js"></script>
   <script src="js/utils/base.js"></script>
 
-  <script src="js/app/objects/devices.js"></script>
   <script src="js/app/objects/bank.js"></script>
 </head>
 <body id="ht-poc">
@@ -39,6 +38,13 @@
   var BANK = new Bank();
 
   var bank_interval=setInterval(function(){BANK.log_stats()},5000);
+
+  BANK.bit_convert(3);
+  BANK.bit_loss(3);
+  BANK.prime_spend(3);
+
+  BANK.bit_gain(300);
+  BANK.bit_convert(20);
 
   /*INFO(d.str());
   INFO(d.uuid());
