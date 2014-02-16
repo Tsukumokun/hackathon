@@ -23,7 +23,6 @@
   <title>Hackathon - Bank Testing</title>
 
   <script src="../js/libs/jquery.min.js"></script>
-  <script src="../js/libs/jquery.roundabout.min.js"></script>
 
   <script src="../js/utils/browser.js"></script>
   <script src="../js/utils/trace.js"></script>
@@ -36,77 +35,14 @@
   <script src="../js/app/logic/resources.js"></script>
   <script src="../js/app/logic/timer.js"></script>
 
-  <style>
-    .crappy-plastic-part-made-in-china {
-        background-color: #222;
-        height: 1.4em;
-        font-size: 6em;
-        overflow: hidden;
-      }
-      .pad {
-        width: 5em;
-        margin: 0 auto;
-        height: 1.8em;
-      }
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: -4.25em -14px 0 0;
-        width: 0.85em;
-        height: 12em;
-        float: left;
-      }
-      li {
-        height: 4em;
-        width: 0.7em;
-        line-height: 2;
-        background-color: #222;
-        color: #fff;
-        text-align: center;
-        cursor: pointer;
-        font-weight: bold;
-        font-family: "Helvetica Neue", Arial, sans-serif;
-      }
-        li.roundabout-in-focus {
-          cursor: default;
-        }
-      li span {
-        display: block;
-        padding-top: 6em;
-      }
-
-  </style>
 </head>
 <body id="ht-test-timer">
 
-  <div class="crappy-plastic-part-made-in-china">
-    <section id="pad">
-
-    </section>
-  </div>
+  <div id="pad"></div>
     
   <script>
 
-  //Counter logic
-  var digits = 0;
-
-  function addDigit(){
-    $("#pad").append(
-      '<ul id="'+digits+'"><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>'
-    );
-
-    digits += 1;
-
-  }
-
-  addDigit();
-
-  $(function(){
-    $('ul').roundabout({
-          shape: "waterWheel"
-        });
-  });
-  //<ul id="0">
+  
 
   //Testing logic
 
