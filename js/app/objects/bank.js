@@ -35,6 +35,9 @@ function Bank(){
 
     this.bits_per_second	= 1;
     this.primes_per_second	= 0;
+
+    this.bit_count_change;
+    this.prime_count_change;
 }
 Bank.prototype = new Base;
 
@@ -44,6 +47,7 @@ Bank.prototype.bit_gain = function(num){
 		return false;
 	}
 	this.bits_current 	+= num;
+	if(this.bit_count_change)this.bit_count_change();
 	return true;
 }
 
@@ -58,6 +62,7 @@ Bank.prototype.bit_loss = function(num){
 	}
 	this.bits_current 	-= num;
 	this.bits_lost 		+= num;
+	if(this.bit_count_change)this.bit_count_change();
 	return true;
 }
 
@@ -73,6 +78,8 @@ Bank.prototype.bit_convert = function(num){
 	this.bits_current	-= this.conversion_rate*num;
 	this.bits_converted += this.conversion_rate*num;
 	this.primes_current += num;
+	if(this.bit_count_change)this.bit_count_change();
+	if(this.prime_count_change)this.prime_count_change();
 	return true;
 }
 
@@ -87,6 +94,7 @@ Bank.prototype.prime_spend = function(num){
 	}
 	this.primes_current -= num;
 	this.primes_spent 	+= num;
+	if(this.prime_count_change)this.prime_count_change();
 	return true;
 }
 
