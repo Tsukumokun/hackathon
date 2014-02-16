@@ -41,24 +41,28 @@
 
   setTimeout(function(){
     SYSTEM("Try converting without sufficient bits");
-    SYSTEM("Result: "+BANK.bit_convert(1));
+    SYSTEM("Result: "+BANK.bit_convert(1)+" should be FALSE");
   },3000);
   setTimeout(function(){
     SYSTEM("Try losing bits beyond zero");
-    SYSTEM("Result: "+BANK.bit_loss(1));
+    SYSTEM("Result: "+BANK.bit_loss(1)+" should be FALSE");
   },6000);
   setTimeout(function(){
     SYSTEM("Try spending primes beyond zero");
-    SYSTEM("Result: "+BANK.prime_spend(1));
+    SYSTEM("Result: "+BANK.prime_spend(1)+" should be FALSE");
   },9000);
   
   setTimeout(function(){
     SYSTEM("Try adding bits to bank");
-    SYSTEM("Result: "+BANK.bit_gain(300));
+    SYSTEM("Result: "+BANK.bit_gain(300)+" should be TRUE");
   },12000);
   setTimeout(function(){
+    SYSTEM("Try removing bits from bank with gain");
+    SYSTEM("Result: "+BANK.bit_gain(-30)+" should be FALSE");
+  },14000);
+  setTimeout(function(){
     SYSTEM("Try converting bits to primes");
-    SYSTEM("Result: "+BANK.bit_convert(20));
+    SYSTEM("Result: "+BANK.bit_convert(20)+" should be TRUE");
   },16000);
 
   setTimeout(function(){
