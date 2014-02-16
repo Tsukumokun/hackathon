@@ -38,11 +38,13 @@
 </head>
 <body id="ht-test-timer">
 
-  <div id="pad"></div>
+  <div id="bits"></div>
     
   <script>
 
-  
+  BANK.bit_count_change = function(){
+    $("#bits").html(BANK.bits_current);
+  }
 
   //Testing logic
 
@@ -53,15 +55,15 @@
 
   setTimeout(function(){
     SYSTEM("Try converting without sufficient bits");
-    SYSTEM("Result: "+BANK.bit_convert(1)+" should be FALSE");
+    SYSTEM("Result: "+BANK.bit_convert(100)+" should be FALSE");
   },3000);
   setTimeout(function(){
     SYSTEM("Try losing bits beyond zero");
-    SYSTEM("Result: "+BANK.bit_loss(1)+" should be FALSE");
+    SYSTEM("Result: "+BANK.bit_loss(100)+" should be FALSE");
   },6000);
   setTimeout(function(){
     SYSTEM("Try spending primes beyond zero");
-    SYSTEM("Result: "+BANK.prime_spend(1)+" should be FALSE");
+    SYSTEM("Result: "+BANK.prime_spend(100)+" should be FALSE");
   },9000);
   
   setTimeout(function(){
