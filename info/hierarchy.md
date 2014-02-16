@@ -21,3 +21,9 @@ Object Hierarchy
 			- DeveloperLaptop
 			- DeveloperComputer
 			- DeveloperServer
+	- Components
+		- Pipe
+		- Cpu
+		- Memory
+		- Hdd
+	- Bank

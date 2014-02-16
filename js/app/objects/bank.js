@@ -73,7 +73,7 @@ Bank.prototype.prime_spend = function(num){
 
 Bank.prototype.log_stats = function(num){
 	INFO(
-		"Bank Stats: " +
+		"Bank: " +
 		"bits=" + this.bits_current + "; " +
 		"primes=" + this.primes_current
 	);

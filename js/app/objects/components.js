@@ -29,10 +29,29 @@ function Component(){
 }
 Component.prototype = new Base;
 
+
 function Pipe(){
 	this.base = Base;
     this.base();
 }
 Pipe.prototype = new Component;
+
+function Cpu(){
+	this.base = Base;
+    this.base();
+}
+Cpu.prototype = new Component;
+
+function Memory(){
+	this.base = Base;
+    this.base();
+}
+Memory.prototype = new Component;
+
+function Hdd(){
+	this.base = Base;
+    this.base();
+}
+Hdd.prototype = new Component;
 
 
