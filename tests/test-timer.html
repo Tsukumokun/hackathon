@@ -1,0 +1,75 @@
+<!--
+  Hackathon - a web based fight and collect game.
+  Copyright (C) 2014 Christopher Kelley   <tsukumokun(at)icloud.com>
+                     Till Smejkal         <till.smejkal(at)gmail.com>
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <title>Hackathon - Bank Testing</title>
+
+  <script src="../js/utils/browser.js"></script>
+  <script src="../js/utils/trace.js"></script>
+
+  <script src="../js/utils/guid.js"></script>
+  <script src="../js/utils/base.js"></script>
+
+  <script src="../js/app/objects/bank.js"></script>
+
+  <script src="../js/app/logic/resources.js"></script>
+  <script src="../js/app/logic/timer.js"></script>
+</head>
+<body id="ht-test-bank">
+  <script>
+
+  SYSTEM("Timer Test Starting");
+
+  var bank_interval=setInterval(function(){BANK.log_stats()},5000);
+  BANK.log_stats();
+
+  setTimeout(function(){
+    SYSTEM("Try converting without sufficient bits");
+    SYSTEM("Result: "+BANK.bit_convert(1)+" should be FALSE");
+  },3000);
+  setTimeout(function(){
+    SYSTEM("Try losing bits beyond zero");
+    SYSTEM("Result: "+BANK.bit_loss(1)+" should be FALSE");
+  },6000);
+  setTimeout(function(){
+    SYSTEM("Try spending primes beyond zero");
+    SYSTEM("Result: "+BANK.prime_spend(1)+" should be FALSE");
+  },9000);
+  
+  setTimeout(function(){
+    SYSTEM("Try adding bits to bank");
+    SYSTEM("Result: "+BANK.bit_gain(300)+" should be TRUE");
+  },12000);
+  setTimeout(function(){
+    SYSTEM("Try removing bits from bank with gain");
+    SYSTEM("Result: "+BANK.bit_gain(-30)+" should be FALSE");
+  },14000);
+  setTimeout(function(){
+    SYSTEM("Try converting bits to primes");
+    SYSTEM("Result: "+BANK.bit_convert(20)+" should be TRUE");
+  },16000);
+
+  setTimeout(function(){
+    SYSTEM("Timer Testing Continues");
+  },16000);
+  </script>
+</body>
+</html>
