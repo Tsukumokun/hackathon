@@ -17,12 +17,6 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: resources.js
+//REQUIRE: bank.js
 
-var TIMER_1S = setInterval(function(){
-
-	BANK.bit_gain(BANK.bits_per_second);
-	if(BANK.primes_per_second!=0)
-		BANK.bit_convert(BANK.primes_per_second);
-
-},1000);
+var BANK = new Bank();
