@@ -50,9 +50,6 @@
 
   SYSTEM("Timer Test Starting");
 
-  var bank_interval=setInterval(function(){BANK.log_stats()},5000);
-  BANK.log_stats();
-
   setTimeout(function(){
     SYSTEM("Try converting without sufficient bits");
     SYSTEM("Result: "+BANK.bit_convert(100)+" should be FALSE");

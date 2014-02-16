@@ -26,3 +26,9 @@ var TIMER_1S = setInterval(function(){
 		BANK.bit_convert(BANK.primes_per_second);
 
 },1000);
+
+var TIMER_5S = setInterval(function(){
+
+	BANK.log_stats();
+
+},5000);
