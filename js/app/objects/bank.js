@@ -32,6 +32,9 @@ function Bank(){
 
     this.conversion_rate	= 8;
     //8 bits per prime
+
+    this.bits_per_second	= 1;
+    this.primes_per_second	= 0;
 }
 Bank.prototype = new Base;
 
@@ -84,6 +87,50 @@ Bank.prototype.prime_spend = function(num){
 	}
 	this.primes_current -= num;
 	this.primes_spent 	+= num;
+	return true;
+}
+
+Bank.prototype.increase_bps = function(num){
+	if (num < 0){
+		ERROR("Bank only accepts positive numbers: "+num);
+		return false;
+	}
+	this.bits_per_second += num;
+	return true;
+}
+
+Bank.prototype.decrease_bps = function(num){
+	if (num < 0){
+		ERROR("Bank only accepts positive numbers: "+num);
+		return false;
+	}
+	if (this.bits_per_second-num <= 0){
+		ERROR("BPS can't be zero");
+		return false;
+	}
+	this.bits_per_second -= num;
+	return true;
+}
+
+Bank.prototype.increase_pps = function(num){
+	if (num < 0){
+		ERROR("Bank only accepts positive numbers: "+num);
+		return false;
+	}
+	this.primes_per_second += num;
+	return true;
+}
+
+Bank.prototype.decrease_bps = function(num){
+	if (num < 0){
+		ERROR("Bank only accepts positive numbers: "+num);
+		return false;
+	}
+	if (this.primes_per_second-num < 0){
+		ERROR("PPS can't be less than zero");
+		return false;
+	}
+	this.primes_per_second -= num;
 	return true;
 }
 
