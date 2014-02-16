@@ -75,6 +75,12 @@ function NormalDevice(){
 NormalDevice.prototype = new Device;
 
 
+function Network(){
+	this.base = NormalDevice;
+    this.base();
+}
+Network.prototype = new NormalDevice;
+
 function Mobile(){
 	this.base = NormalDevice;
     this.base();

@@ -32,16 +32,13 @@
   <script src="js/utils/base.js"></script>
 
   <script src="js/app/objects/devices.js"></script>
+  <script src="js/app/objects/bank.js"></script>
 </head>
 <body id="ht-poc">
   <script>
-  var d = new Toaster();
-  var m = new Microwave();
-  ERROR(d.uuid());
-  ERROR(m.uuid());
+  var BANK = new Bank();
 
-  var g = new DeveloperMobile();
-  ERROR(g.uuid());
+  var bank_interval=setInterval(function(){BANK.log_stats()},5000);
 
   /*INFO(d.str());
   INFO(d.uuid());

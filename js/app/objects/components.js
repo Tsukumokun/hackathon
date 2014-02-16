@@ -17,32 +17,22 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: trace.js guid.js
+//REQUIRE: base.js
 
-function Base()
-{
-	this.m_uuid = guid();
+//////////////////////////////////////////////////
+///// COMPONENT BASE CLASS
+//////////////////////////////////////////////////
+
+function Component(){
+	this.base = Base;
+    this.base();
 }
+Component.prototype = new Base;
 
-Base.prototype.uuid = function(){
-	return this.m_uuid;
+function Pipe(){
+	this.base = Base;
+    this.base();
 }
+Pipe.prototype = new Component;
 
-Base.prototype.str = function()
-{
-	return "Not Implemented";
-}
 
-Base.prototype.instanceof = function(constructor)
-{
-	var obj = this;
-
-		while (obj != null)
-		{
-			if (obj == constructor.prototype)
-				return true;
-			obj = obj.__proto__;
-		}
-
-		return false;
-}
