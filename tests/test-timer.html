@@ -35,15 +35,26 @@
   <script src="../js/app/logic/resources.js"></script>
   <script src="../js/app/logic/timer.js"></script>
 
+  <link rel="stylesheet" href="../css/fonts.css" />
+
+  <style>
+    body{background:#292929;}
+    #bits{
+      font-size:64px;
+      color:#00DEFF;
+      padding:60px;
+    }
+
+  </style>
 </head>
 <body id="ht-test-timer">
 
-  <div id="bits"></div>
+  <div id="bits" class="font-exo font-extra-light"></div>
     
   <script>
 
   BANK.bit_count_change = function(){
-    $("#bits").html(BANK.bits_current);
+    $("#bits").html("Bits: "+BANK.bits_current);
   }
 
   //Testing logic
