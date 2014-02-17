@@ -39,10 +39,13 @@
 
   <style>
     body{background:#292929;}
-    #bits{
+    div{
       font-size:64px;
       color:#00DEFF;
       padding:60px;
+    }
+    #bits{
+      padding-bottom:0px;
     }
 
   </style>
@@ -50,11 +53,15 @@
 <body id="ht-test-timer">
 
   <div id="bits" class="font-exo font-extra-light"></div>
+  <br/>
+  <div id="primes" class="font-exo font-extra-light"></div>
     
   <script>
 
+  BANK.increase_pps(1);
   BANK.bit_count_change = function(){
-    $("#bits").html("Bits: "+BANK.bits_current);
+    $("#bits").html("Bits:     "+BANK.bits_current);
+    $("#primes").html("Primes: "+BANK.primes_current);
   }
 
   //Testing logic
