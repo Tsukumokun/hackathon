@@ -17,6 +17,8 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: bank.js
+//REQUIRE: bank.js image_manager.js
 
 var BANK = new Bank();
+
+var IMAGE_MANAGER = new ImageManager();
