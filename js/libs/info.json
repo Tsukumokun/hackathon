@@ -1,0 +1,14 @@
+{
+	"versions":{
+		"jquery":"2.1.0",
+		"jquery-roundabout":"2.4.2",
+		"jquery-roundabout-shapes":"2.0.0",
+
+		"state-machine":"2.2.0"
+	},
+
+	"authors":{
+		"state-machine":"Jake Gordon"
+	}
+
+}
