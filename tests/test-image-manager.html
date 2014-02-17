@@ -40,15 +40,23 @@
   <script src="../js/app/objects/bank.js"></script>
 
   <script src="../js/app/logic/resources.js"></script>
-  <script src="../wjs/app/logic/timer.js"></script>
+  <script src="../js/app/logic/timer.js"></script>
 </head>
 <body id="ht-test-image-manager">
+
+  <div id="duck">
+
+  </div>
+
   <script>
 
   SYSTEM("Image Manager Test Starting");
 
-  
+  IMAGE_MANAGER.queue("../res/duck.jpeg");
 
+  IMAGE_MANAGER.downloadAll(function(){
+    $("#duck").html(IMAGE_MANAGER.getImage("../res/duck.jpeg"));
+  });
 
   </script>
 </body>

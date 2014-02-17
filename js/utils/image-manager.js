@@ -38,9 +38,10 @@ ImageManager.prototype.downloadAll = function(callback)
 	{
 		callback();
 	}
-	for (var i = 0; i < this.downloadQueue.length: i++)
+	for (var i = 0; i < this.downloadQueue.length; i++)
 	{
 		var img = new Image();
+		var path = this.downloadQueue[i];
 		var that = this;
 		img.addEventListener("load",function(){
 			that.successCount += 1;
@@ -54,7 +55,7 @@ ImageManager.prototype.downloadAll = function(callback)
 				callback();
 			}
 		},false);
-		img.src = this.downloadQueue[i];
+		img.src = path;
 		this.cache[path] = img;
 	}
 }
