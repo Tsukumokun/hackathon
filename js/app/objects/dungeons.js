@@ -17,15 +17,41 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-function guid(){
-    var d = new Date().getTime();
-    var guid =
-		'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, 
-		    function(c) {
-		    	var r = (d + Math.random()*16)%16 | 0;
-		    		d = Math.floor(d/16);
-		    	return (c=='x' ? r : (r&0x7|0x8)).toString(16);
-			}
-		);
-	return guid;
+//REQUIRE: base.js
+
+//////////////////////////////////////////////////
+///// DUNGEON BASE CLASS
+//////////////////////////////////////////////////
+
+function Dungeon(){
+    this.base = Base;
+    this.base();
 }
+Dungeon.prototype = new Base;
+
+
+function PipeDungeon(){
+    this.base = Dungeon;
+    this.base();
+}
+Pipe.prototype = new Dungeon;
+
+function CpuDungeon(){
+    this.base = Dungeon;
+    this.base();
+}
+Cpu.prototype = new Dungeon;
+
+function MemoryDungeon(){
+    this.base = Dungeon;
+    this.base();
+}
+Memory.prototype = new Dungeon;
+
+function HddDungeon(){
+    this.base = Dungeon;
+    this.base();
+}
+Hdd.prototype = new Dungeon;
+
+
