@@ -23,8 +23,10 @@ function getErrorObject(){
     try { throw Error('') } catch(err) {return err;}
 }
 
+var internal_trace_log = console.log.bind(console);
+
 var trace_log = function(type,message,css){
-	console.log("Unsupported Browser: "+type+":"+message);
+	internal_trace_log("Unsupported Browser: "+type+":"+message);
 }
 if(BROWSER_CHROME){
 	trace_log = function(type,message,css){
@@ -40,7 +42,7 @@ if(BROWSER_CHROME){
 		var file = trace.substring(trace.lastIndexOf("/")+1);
 		file = file.substring(0,file.indexOf(":"));
 
-		console.log("%c"+type+" @ "+file+" ["+func+"]("+line+"): "+message,css);
+		internal_trace_log("%c"+type+" @ "+file+" ["+func+"]("+line+"): "+message,css);
 	}
 }
 else if(BROWSER_SAFARI){
@@ -56,7 +58,7 @@ else if(BROWSER_SAFARI){
 		var file = trace.substring(trace.lastIndexOf("/")+1);
 		file = file.substring(0,file.indexOf(":"));
 
-		console.log("%c"+type+" @ "+file+" ["+func+"]("+line+"): "+message,css);
+		internal_trace_log("%c"+type+" @ "+file+" ["+func+"]("+line+"): "+message,css);
 	}
 }
 else if(BROWSER_FIREFOX){
@@ -75,10 +77,10 @@ else if(BROWSER_FIREFOX){
 		file = file.substring(0,file.indexOf(":"));
 
 		if (window.console && (window.console.firebug || window.console.exception)){
-			console.log("%c"+type+" @ "+file+" ["+func+"]("+line+"): "+message,css);
+			internal_trace_log("%c"+type+" @ "+file+" ["+func+"]("+line+"): "+message,css);
 		}else{
-			console.log("For better logging please use Firebug!");
-			console.log(type+" @ "+file+" ["+func+"]("+line+"): "+message);
+			internal_trace_log("For better logging please use Firebug!");
+			internal_trace_log(type+" @ "+file+" ["+func+"]("+line+"): "+message);
 		}
 
 	}
@@ -106,13 +108,21 @@ if(typeof RELEASE === 'undefined'){
 	TEXT    = function(message){trace_log("[TEXT]  ",message,'color: #34495E');}
 
 	SYSTEM("Tracing Enabled");
-
-
+	//var console = {};
+	//console.warn = function(message){WARN(message);};
+	//console.err  = function(message){ERROR(message);};
 }
 else
 {
 	console.log("Tracing Disabled for Release");
 }
+
+var console    = {};
+console.log    = function(){};
+console.warn   = function(message){WARN(message);};
+console.error  = function(message){ERROR(message);};
+
+
 
 
 
