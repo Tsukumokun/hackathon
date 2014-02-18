@@ -118,7 +118,7 @@ else
 }
 
 var console    = {};
-console.log    = function(){};
+console.log    = function(message){INFO(message);};
 console.warn   = function(message){WARN(message);};
 console.error  = function(message){ERROR(message);};
 
