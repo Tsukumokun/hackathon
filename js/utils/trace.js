@@ -117,6 +117,8 @@ else
 	console.log("Tracing Disabled for Release");
 }
 
+
+//TODO: make this more robust
 var console    = {};
 console.log    = function(message){INFO(message);};
 console.warn   = function(message){WARN(message);};
