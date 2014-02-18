@@ -83,15 +83,36 @@ else if(BROWSER_FIREFOX){
 
 	}
 }
-function ERROR 	(message){trace_log("[ERROR] ",message,'color: #E74C3C');}
-function SEVERE	(message){trace_log("[SEVERE]",message,'color: #C0392B');}
-function WARN 	(message){trace_log("[WARN]  ",message,'color: #F1C40F');}
-function INFO 	(message){trace_log("[INFO]  ",message,'color: #3498DB');}
-function SYSTEM	(message){trace_log("[SYSTEM]",message,'color: #9B59B6');}
-function NOTE	(message){trace_log("[NOTE]  ",message,'color: #95A5A6');}
-function TODO	(message){trace_log("[TODO]  ",message,'color: #2ECC71');}
-function XXX	(message){trace_log("[XXX]   ",message,'color: #1ABC9C');}
-function TEXT	(message){trace_log("[TEXT]  ",message,'color: #34495E');}
 
-SYSTEM("Tracing Enabled");
+var ERROR   = function(){};
+var SEVERE  = function(){};
+var WARN    = function(){};
+var INFO    = function(){};
+var SYSTEM  = function(){};
+var NOTE    = function(){};
+var TODO    = function(){};
+var XXX     = function(){};
+var TEXT    = function(){};
+
+if(typeof RELEASE === 'undefined'){
+	ERROR   = function(message){trace_log("[ERROR] ",message,'color: #E74C3C');}
+	SEVERE  = function(message){trace_log("[SEVERE]",message,'color: #C0392B');}
+	WARN    = function(message){trace_log("[WARN]  ",message,'color: #F1C40F');}
+	INFO    = function(message){trace_log("[INFO]  ",message,'color: #3498DB');}
+	SYSTEM  = function(message){trace_log("[SYSTEM]",message,'color: #9B59B6');}
+	NOTE    = function(message){trace_log("[NOTE]  ",message,'color: #95A5A6');}
+	TODO    = function(message){trace_log("[TODO]  ",message,'color: #2ECC71');}
+	XXX     = function(message){trace_log("[XXX]   ",message,'color: #1ABC9C');}
+	TEXT    = function(message){trace_log("[TEXT]  ",message,'color: #34495E');}
+
+	SYSTEM("Tracing Enabled");
+
+
+}
+else
+{
+	console.log("Tracing Disabled for Release");
+}
+
+
 
