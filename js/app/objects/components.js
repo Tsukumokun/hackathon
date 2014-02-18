@@ -24,33 +24,43 @@
 //////////////////////////////////////////////////
 
 function Component(){
-	this.base = Base;
+    this.base = Base;
     this.base();
+
+    this.dungeon = null;
 }
 Component.prototype = new Base;
 
 
 function Pipe(){
-	this.base = Component;
+    this.base = Component;
     this.base();
+
+    this.dungeon = new PipeDungeon();
 }
 Pipe.prototype = new Component;
 
 function Cpu(){
-	this.base = Component;
+    this.base = Component;
     this.base();
+
+    this.dungeon = new CpuDungeon();
 }
 Cpu.prototype = new Component;
 
 function Memory(){
-	this.base = Component;
+    this.base = Component;
     this.base();
+
+    this.dungeon = new MemoryDungeon();
 }
 Memory.prototype = new Component;
 
 function Hdd(){
-	this.base = Component;
+    this.base = Component;
     this.base();
+
+    this.dungeon = new HddDungeon();
 }
 Hdd.prototype = new Component;
 

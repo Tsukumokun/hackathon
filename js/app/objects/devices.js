@@ -24,8 +24,10 @@
 //////////////////////////////////////////////////
 
 function Device(){
-	this.base = Base;
+    this.base = Base;
     this.base();
+
+    this.components = [];
 }
 Device.prototype = new Base;
 
@@ -34,32 +36,32 @@ Device.prototype = new Base;
 //////////////////////////////////////////////////
 
 function SpecialDevice(){
-	this.base = Device;
+    this.base = Device;
     this.base();
 }
 SpecialDevice.prototype = new Device;
 
 
 function Toaster(){
-	this.base = SpecialDevice;
+    this.base = SpecialDevice;
     this.base();
 }
 Toaster.prototype = new SpecialDevice;
 
 function Microwave(){
-	this.base = SpecialDevice;
+    this.base = SpecialDevice;
     this.base();
 }
 Microwave.prototype = new SpecialDevice;
 
 function Lightbulb(){
-	this.base = SpecialDevice;
+    this.base = SpecialDevice;
     this.base();
 }
 Lightbulb.prototype = new SpecialDevice;
 
 function Switch(){
-	this.base = SpecialDevice;
+    this.base = SpecialDevice;
     this.base();
 }
 Switch.prototype = new SpecialDevice;
@@ -69,56 +71,56 @@ Switch.prototype = new SpecialDevice;
 //////////////////////////////////////////////////
 
 function NormalDevice(){
-	this.base = Device;
+    this.base = Device;
     this.base();
 }
 NormalDevice.prototype = new Device;
 
 
 function Network(){
-	this.base = NormalDevice;
+    this.base = NormalDevice;
     this.base();
 }
 Network.prototype = new NormalDevice;
 
 function Mobile(){
-	this.base = NormalDevice;
+    this.base = NormalDevice;
     this.base();
 }
 Mobile.prototype = new NormalDevice;
 
 function Laptop(){
-	this.base = NormalDevice;
+    this.base = NormalDevice;
     this.base();
 }
 Laptop.prototype = new NormalDevice;
 
 function Desktop(){
-	this.base = NormalDevice;
+    this.base = NormalDevice;
     this.base();
 }
 Desktop.prototype = new NormalDevice;
 
 function Server(){
-	this.base = NormalDevice;
+    this.base = NormalDevice;
     this.base();
 }
 Server.prototype = new NormalDevice;
 
 function Rack(){
-	this.base = NormalDevice;
+    this.base = NormalDevice;
     this.base();
 }
 Rack.prototype = new NormalDevice;
 
 function DataCenter(){
-	this.base = NormalDevice;
+    this.base = NormalDevice;
     this.base();
 }
 DataCenter.prototype = new NormalDevice;
 
 function SuperComputer(){
-	this.base = NormalDevice;
+    this.base = NormalDevice;
     this.base();
 }
 SuperComputer.prototype = new NormalDevice;
@@ -128,32 +130,32 @@ SuperComputer.prototype = new NormalDevice;
 //////////////////////////////////////////////////
 
 function DeveloperDevice(){
-	this.base = Device;
+    this.base = Device;
     this.base();
 }
 DeveloperDevice.prototype = new Device;
 
 
 function DeveloperMobile(){
-	this.base = DeveloperDevice;
+    this.base = DeveloperDevice;
     this.base();
 }
 DeveloperMobile.prototype = new DeveloperDevice;
 
 function DeveloperLaptop(){
-	this.base = DeveloperDevice;
+    this.base = DeveloperDevice;
     this.base();
 }
 DeveloperLaptop.prototype = new DeveloperDevice;
 
 function DeveloperDesktop(){
-	this.base = DeveloperDevice;
+    this.base = DeveloperDevice;
     this.base();
 }
 DeveloperDesktop.prototype = new DeveloperDevice;
 
 function DeveloperServer(){
-	this.base = DeveloperDevice;
+    this.base = DeveloperDevice;
     this.base();
 }
 DeveloperServer.prototype = new DeveloperDevice;
