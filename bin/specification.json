@@ -1,0 +1,31 @@
+{
+    "js":
+    [
+        //Libraries
+        "../js/libs/jquery.min.js",
+        "../js/libs/state-machine.min.js",
+        //Resources
+        "../js/utils/browser.js",
+        "../js/utils/trace.js",
+
+        "../js/utils/guid.js",
+        "../js/utils/base.js",
+
+        "../js/utils/image-manager.js",
+
+        "../js/app/objects/devices.js",
+        "../js/app/objects/components.js",
+        "../js/app/objects/dungeons.js",
+
+        "../js/app/objects/bank.js",
+
+        "../js/app/logic/resources.js",
+        "../js/app/logic/timer.js"
+    ],
+    "css":
+    [
+        "../css/fonts.css",
+        "../cube.css"
+    ]
+}
+
