@@ -1,7 +1,6 @@
 {
     "js":
     [
-        
         "../js/libs/jquery.min.js",
         "../js/libs/state-machine.min.js",
 
@@ -23,7 +22,6 @@
         "../js/app/logic/resources.js",
         "../js/app/logic/timer.js"
     ],
-
     "css":
     [
         "../css/fonts.css",
