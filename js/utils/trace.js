@@ -120,7 +120,8 @@ else
 
 //TODO: make this more robust
 var console    = {};
-console.log    = function(message){INFO(message);};
+console.log    = function(message){TEXT(message);};
+console.info   = function(message){INFO(message);};
 console.warn   = function(message){WARN(message);};
 console.error  = function(message){ERROR(message);};
 
