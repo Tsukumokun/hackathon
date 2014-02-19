@@ -24,7 +24,8 @@ function Base()
 	this.m_uuid = guid();
 }
 
-Base.prototype.uuid = function(){
+Base.prototype.uuid = function()
+{
 	return this.m_uuid;
 }
 
