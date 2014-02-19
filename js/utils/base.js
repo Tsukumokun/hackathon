@@ -34,7 +34,7 @@ Base.prototype.str = function()
 	return "Not Implemented";
 }
 
-Base.prototype.instanceof = function(constructor)
+Base.prototype.instanceOf = function(constructor)
 {
 	var obj = this;
 
