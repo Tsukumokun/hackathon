@@ -1,10 +1,11 @@
 {
     "js":
     [
-        //Libraries
+        
         "../js/libs/jquery.min.js",
         "../js/libs/state-machine.min.js",
-        //Resources
+
+
         "../js/utils/browser.js",
         "../js/utils/trace.js",
 
@@ -22,6 +23,7 @@
         "../js/app/logic/resources.js",
         "../js/app/logic/timer.js"
     ],
+
     "css":
     [
         "../css/fonts.css",
