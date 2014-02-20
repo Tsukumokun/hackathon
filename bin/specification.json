@@ -25,7 +25,7 @@
     "css":
     [
         "../css/fonts.css",
-        "../cube.css"
+        "../css/cube.css"
     ]
 }
 

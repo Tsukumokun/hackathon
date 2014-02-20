@@ -20,21 +20,21 @@
 //REQUIRE: base.js
 
 function Bank(){
-	this.base = Base;
+    this.base = Base;
     this.base();
 
-    this.bits_current 		= 0;
-    this.bits_lost 			= 0;
-    this.bits_converted 	= 0;
+    this.bits_current       = 0;
+    this.bits_lost          = 0;
+    this.bits_converted     = 0;
 
-    this.primes_current 	= 0;
-    this.primes_spent 		= 0;
+    this.primes_current     = 0;
+    this.primes_spent       = 0;
 
-    this.conversion_rate	= 8;
+    this.conversion_rate    = 8;
     //8 bits per prime
 
-    this.bits_per_second	= 1;
-    this.primes_per_second	= 0;
+    this.bits_per_second    = 1;
+    this.primes_per_second  = 0;
 
     this.bit_count_change;
     this.prime_count_change;
@@ -42,112 +42,112 @@ function Bank(){
 Bank.prototype = new Base;
 
 Bank.prototype.bit_gain = function(num){
-	if (num < 0){
-		ERROR("Bank only accepts positive numbers: "+num);
-		return false;
-	}
-	this.bits_current 	+= num;
-	if(this.bit_count_change)this.bit_count_change();
-	return true;
+    if (num < 0){
+        ERROR("Bank only accepts positive numbers: "+num);
+        return false;
+    }
+    this.bits_current   += num;
+    if(this.bit_count_change)this.bit_count_change();
+    return true;
 }
 
 Bank.prototype.bit_loss = function(num){
-	if (num < 0){
-		ERROR("Bank only accepts positive numbers: "+num);
-		return false;
-	}
-	if (num > this.bits_current){
-		ERROR("Insufficient bits to lose");
-		return false;
-	}
-	this.bits_current 	-= num;
-	this.bits_lost 		+= num;
-	if(this.bit_count_change)this.bit_count_change();
-	return true;
+    if (num < 0){
+        ERROR("Bank only accepts positive numbers: "+num);
+        return false;
+    }
+    if (num > this.bits_current){
+        ERROR("Insufficient bits to lose");
+        return false;
+    }
+    this.bits_current   -= num;
+    this.bits_lost      += num;
+    if(this.bit_count_change)this.bit_count_change();
+    return true;
 }
 
 Bank.prototype.bit_convert = function(num){
-	if (num < 0){
-		ERROR("Bank only accepts positive numbers: "+num);
-		return false;
-	}
-	if (this.conversion_rate*num > this.bits_current){
-		ERROR("Insufficient bits to convert");
-		return false;
-	}
-	this.bits_current	-= this.conversion_rate*num;
-	this.bits_converted += this.conversion_rate*num;
-	this.primes_current += num;
-	if(this.bit_count_change)this.bit_count_change();
-	if(this.prime_count_change)this.prime_count_change();
-	return true;
+    if (num < 0){
+        ERROR("Bank only accepts positive numbers: "+num);
+        return false;
+    }
+    if (this.conversion_rate*num > this.bits_current){
+        ERROR("Insufficient bits to convert");
+        return false;
+    }
+    this.bits_current   -= this.conversion_rate*num;
+    this.bits_converted += this.conversion_rate*num;
+    this.primes_current += num;
+    if(this.bit_count_change)this.bit_count_change();
+    if(this.prime_count_change)this.prime_count_change();
+    return true;
 }
 
 Bank.prototype.prime_spend = function(num){
-	if (num < 0){
-		ERROR("Bank only accepts positive numbers: "+num);
-		return false;
-	}
-	if (num > this.primes_current){
-		ERROR("Insufficient primes to spend");
-		return false;
-	}
-	this.primes_current -= num;
-	this.primes_spent 	+= num;
-	if(this.prime_count_change)this.prime_count_change();
-	return true;
+    if (num < 0){
+        ERROR("Bank only accepts positive numbers: "+num);
+        return false;
+    }
+    if (num > this.primes_current){
+        ERROR("Insufficient primes to spend");
+        return false;
+    }
+    this.primes_current -= num;
+    this.primes_spent   += num;
+    if(this.prime_count_change)this.prime_count_change();
+    return true;
 }
 
 Bank.prototype.increase_bps = function(num){
-	if (num < 0){
-		ERROR("Bank only accepts positive numbers: "+num);
-		return false;
-	}
-	this.bits_per_second += num;
-	return true;
+    if (num < 0){
+        ERROR("Bank only accepts positive numbers: "+num);
+        return false;
+    }
+    this.bits_per_second += num;
+    return true;
 }
 
 Bank.prototype.decrease_bps = function(num){
-	if (num < 0){
-		ERROR("Bank only accepts positive numbers: "+num);
-		return false;
-	}
-	if (this.bits_per_second-num <= 0){
-		ERROR("BPS can't be zero");
-		return false;
-	}
-	this.bits_per_second -= num;
-	return true;
+    if (num < 0){
+        ERROR("Bank only accepts positive numbers: "+num);
+        return false;
+    }
+    if (this.bits_per_second-num <= 0){
+        ERROR("BPS can't be zero");
+        return false;
+    }
+    this.bits_per_second -= num;
+    return true;
 }
 
 Bank.prototype.increase_pps = function(num){
-	if (num < 0){
-		ERROR("Bank only accepts positive numbers: "+num);
-		return false;
-	}
-	this.primes_per_second += num;
-	return true;
+    if (num < 0){
+        ERROR("Bank only accepts positive numbers: "+num);
+        return false;
+    }
+    this.primes_per_second += num;
+    return true;
 }
 
 Bank.prototype.decrease_bps = function(num){
-	if (num < 0){
-		ERROR("Bank only accepts positive numbers: "+num);
-		return false;
-	}
-	if (this.primes_per_second-num < 0){
-		ERROR("PPS can't be less than zero");
-		return false;
-	}
-	this.primes_per_second -= num;
-	return true;
+    if (num < 0){
+        ERROR("Bank only accepts positive numbers: "+num);
+        return false;
+    }
+    if (this.primes_per_second-num < 0){
+        ERROR("PPS can't be less than zero");
+        return false;
+    }
+    this.primes_per_second -= num;
+    return true;
 }
 
 Bank.prototype.log_stats = function(){
-	INFO(
-		"Bank: " +
-		"bits=" + this.bits_current + "; " +
-		"primes=" + this.primes_current
-	);
+    INFO(
+        "Bank: " +
+        "bits=" + this.bits_current + "; " +
+        "primes=" + this.primes_current
+    );
 }
 
 
