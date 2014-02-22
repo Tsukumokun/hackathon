@@ -18,6 +18,10 @@
 //
 
 //REQUIRE: base.js
+#ifndef BANK_JS
+#define BANK_JS
+
+#include "../../utils/base.js"
 
 function Bank(){
     this.base = Base;
@@ -150,5 +154,5 @@ Bank.prototype.log_stats = function(){
     );
 }
 
-
+#endif
 

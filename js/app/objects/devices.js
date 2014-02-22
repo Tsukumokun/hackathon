@@ -19,6 +19,11 @@
 
 //REQUIRE: base.js
 
+#ifndef DEVICES_JS
+#define DEVICES_JS
+
+#include "../../utils/base.js"
+
 //////////////////////////////////////////////////
 ///// DEVICE BASE CLASS
 //////////////////////////////////////////////////
@@ -159,3 +164,5 @@ function DeveloperServer(){
     this.base();
 }
 DeveloperServer.prototype = new DeveloperDevice;
+
+#endif

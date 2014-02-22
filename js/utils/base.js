@@ -18,6 +18,11 @@
 //
 
 //REQUIRE: trace.js guid.js
+#ifndef BASE_JS
+#define BASE_JS
+
+#include "trace.js"
+#include "guid.js"
 
 function Base()
 {
@@ -47,3 +52,5 @@ Base.prototype.instanceOf = function(constructor)
 
 		return false;
 }
+
+#endif

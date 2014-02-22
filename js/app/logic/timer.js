@@ -18,6 +18,10 @@
 //
 
 //REQUIRE: resources.js
+#ifndef TIMER_JS
+#define TIMER_JS
+
+#include "resources.js"
 
 var TIMER_1S = setInterval(function(){
 
@@ -32,3 +36,5 @@ var TIMER_5S = setInterval(function(){
 	BANK.log_stats();
 
 },5000);
+
+#endif

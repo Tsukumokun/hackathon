@@ -19,7 +19,10 @@
 
 //REQUIRE: browser.js
 
+#ifndef TRACE_JS
+#define TRACE_JS
 
+#include "browser.js"
 
 // Override the console directive 
 //  This effectively allows trace to manage
@@ -230,3 +233,5 @@ function trace_text_disable()
 }
 
 trace_all_enable();
+
+#endif

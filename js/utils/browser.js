@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
+#ifndef BROWSER_JS
+#define BROWSER_JS
 
 var BROWSER_CHROME  = false;
 var BROWSER_SAFARI  = false;
@@ -39,3 +41,5 @@ function browser(){
 }
 
 var BROWSER = browser();
+
+#endif

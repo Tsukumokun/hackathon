@@ -19,6 +19,11 @@
 
 //REQUIRE: base.js
 
+#ifndef COMPONENTS_JS
+#define COMPONENTS_JS
+
+#include "../../utils/base.js"
+
 //////////////////////////////////////////////////
 ///// COMPONENT BASE CLASS
 //////////////////////////////////////////////////
@@ -64,4 +69,4 @@ function Hdd(){
 }
 Hdd.prototype = new Component;
 
-
+#endif

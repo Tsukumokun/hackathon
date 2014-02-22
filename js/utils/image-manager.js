@@ -19,6 +19,11 @@
 
 //REQUIRE: trace.js
 
+#ifndef IMAGE_MANAGER_JS
+#define IMAGE_MANAGER_JS
+
+#include "trace.js"
+
 function ImageManager()
 {
 	this.successCount 	= 0;
@@ -70,3 +75,5 @@ ImageManager.prototype.getImage = function(path)
 {
 	return this.cache[path];
 }
+
+#endif

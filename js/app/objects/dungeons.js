@@ -19,6 +19,11 @@
 
 //REQUIRE: base.js
 
+#ifndef DUNGEONS_JS
+#define DUNGEONS_JS
+
+#include "../../utils/base.js"
+
 //////////////////////////////////////////////////
 ///// DUNGEON BASE CLASS
 //////////////////////////////////////////////////
@@ -54,4 +59,5 @@ function HddDungeon(){
 }
 Hdd.prototype = new Dungeon;
 
+#endif
 

@@ -18,7 +18,14 @@
 //
 
 //REQUIRE: bank.js image_manager.js
+#ifndef RESOURCES_JS
+#define RESOURCES_JS
+
+#include "../objects/bank.js"
+#include "../../utils/image-manager.js"
 
 var BANK = new Bank();
 
 var IMAGE_MANAGER = new ImageManager();
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef CUBE_CSS
+#define CUBE_CSS
 
 @-webkit-keyframes ht-cube-animation {
   from,to  { }
@@ -86,3 +88,5 @@
   -moz-transform: rotateX(-90deg) translateZ(60px);
   -ms-transform: rotateX(-90deg) translateZ(60px);
 }
+
+#endif
