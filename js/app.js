@@ -17,4 +17,5 @@
  * along with this program.  If not, see <http:// www.gnu.org/licenses/>
  */
 
-#include "base.js"
+#include "libs/jquery.min.js"
+#include "libs/state-machine.js"

@@ -1,0 +1,1 @@
+function Base(){this.m_uuid=guid()}Base.prototype.uuid=function(){return this.m_uuid};Base.prototype.str=function(){return"Not Implemented"};Base.prototype.instanceOf=function(a){var b=this;while(b!=null){if(b==a.prototype){return true}b=b.__proto__}return false};
