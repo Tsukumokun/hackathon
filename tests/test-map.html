@@ -27,40 +27,18 @@
   <link rel="stylesheet" href="../bin/index.css" />
 
   <style>
-  #map
-  {
-    display:block;
-    width:500px;
-    height:500px;
-    left:50%;
-    top:50%;
-    margin-top:-250px;
-    margin-left:-250px;
-    position:absolute !important;
-  }
-  #draggable-map
-  {
-    border:1px solid transparent;
-    background:transparent !important;
+  html,body{
     width:100%;
     height:100%;
   }
+  #map
+  {
+    margin:100px;
+    width:500px;
+    height:500px;
+  }
   #draggable-map article{
-    width:80px;
-    height:80px;
-    display:inline-block;
-    position:relative;
-  }
-  #draggable-map article.n1{
-    left:600px;
-  }
-  #draggable-map article.n2{
-    left:300px;
-    top:200px;
-
-  }
-  #draggable-map article.n3{
-    top:600px;
+    background:green;
   }
   </style>
 </head>
@@ -71,11 +49,12 @@
 
   <script>
     var map = new visualmap("#map");
-    $(function(){
-      $("#draggable-map").append('<article class="n1 green-background"></article>')
-      $("#draggable-map").append('<article class="n2 green-background"></article>')
-      $("#draggable-map").append('<article class="n3 green-background"></article>')
-    })
+    map.insert(1,3,null,function(){XXX("CLICKED1")})
+    map.insert(1,1,null,function(){XXX("CLICKED2")})
+    map.insert(3,1,null,function(){XXX("CLICKED3")})
+    map.insert(1,8,null,function(){XXX("CLICKED4")})
+    map.insert(10,11,null,function(){XXX("CLICKED5")})
+    map.insert(5,7,null,function(){XXX("CLICKED6")})
   </script>
 </body>
 </html>

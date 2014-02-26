@@ -27,15 +27,44 @@ var visualmap = function(container)
     this.base()
 
     this.container = container
-
     this.map = $('<section id="draggable-map" class="yellow-background"></section>')
+
     $(this.container).append(this.map)
+    $(this.map).css({
+        "border":"1px solid transparent",
+        "background":"transparent",
+        "width":"100%",
+        "height":"100%"
+    })
 
     $(this.container).overscroll({showThumbs:false});
+
+
 
     //var that = this;
     //setInterval(function(){
     //    $(that.map).append('<div style="display:block;width:50px;height:50px;"></div>')
     //    $(that.container).overscroll({showThumbs:false});
     //},400)
+}
+visualmap.prototype = new Base;
+
+visualmap.prototype.insert = function(x,y,inner,callback)
+{
+    var size=50
+
+    var article = $('<article></article>')
+    $(article).css({
+        "display":"inline-block",
+        "position":"relative",
+        "width":size+"px",
+        "height":size+"px",
+        "top":y*size+"px",
+        "left":x*size+"px"
+    })
+    if(inner)
+        $(article).append(inner)
+    if(callback)
+        $(article).click(callback)
+    $(this.map).append(article)
 }
