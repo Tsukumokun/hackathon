@@ -31,5 +31,11 @@ var visualmap = function(container)
     this.map = $('<section id="draggable-map" class="yellow-background"></section>')
     $(this.container).append(this.map)
 
-    $(this.map).draggable({ containment: this.container, scroll: false })
+    $(this.container).overscroll({showThumbs:false});
+
+    //var that = this;
+    //setInterval(function(){
+    //    $(that.map).append('<div style="display:block;width:50px;height:50px;"></div>')
+    //    $(that.container).overscroll({showThumbs:false});
+    //},400)
 }

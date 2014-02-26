@@ -3,10 +3,13 @@
 		"jquery":"2.1.0",
 		"jquery-ui":"1.10.4",
 
+        "jquery.overscroll":"1.7.7",
+
 		"state-machine":"2.2.0"
 	},
 
 	"authors":{
+        "jquery.overscroll":"Jon Azoff",
 		"state-machine":"Jake Gordon"
 	}
 

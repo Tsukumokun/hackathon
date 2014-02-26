@@ -20,6 +20,8 @@
 #include "libs/jquery.min.js"
 #include "libs/jquery-ui.min.js"
 
+#include "libs/jquery.overscroll.min.js"
+
 #include "libs/state-machine.min.js"
 
 #include "app/logic/timer.js"
