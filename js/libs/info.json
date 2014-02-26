@@ -1,8 +1,7 @@
 {
 	"versions":{
 		"jquery":"2.1.0",
-		"jquery-roundabout":"2.4.2",
-		"jquery-roundabout-shapes":"2.0.0",
+		"jquery-ui":"1.10.4",
 
 		"state-machine":"2.2.0"
 	},
