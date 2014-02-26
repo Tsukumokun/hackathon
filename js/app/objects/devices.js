@@ -17,10 +17,7 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: base.js
-
-#ifndef DEVICES_JS
-#define DEVICES_JS
+#pragma once
 
 #include "../../utils/base.js"
 
@@ -165,4 +162,3 @@ function DeveloperServer(){
 }
 DeveloperServer.prototype = new DeveloperDevice;
 
-#endif

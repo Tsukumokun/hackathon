@@ -1,5 +1,4 @@
-#ifndef FONTS_CSS
-#define FONTS_CSS
+#pragma once
 
 @import url(http://fonts.googleapis.com/css?family=Exo:100,200,300,400,500,600,700,800,900);
 
@@ -33,5 +32,3 @@
 .font-ultra-bold{
 	font-weight:900;
 }
-
-#endif

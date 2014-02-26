@@ -17,9 +17,7 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: resources.js
-#ifndef TIMER_JS
-#define TIMER_JS
+#pragma once
 
 #include "resources.js"
 
@@ -36,5 +34,3 @@ var TIMER_5S = setInterval(function(){
 	BANK.log_stats();
 
 },5000);
-
-#endif

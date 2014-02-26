@@ -17,10 +17,7 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: base.js
-
-#ifndef DUNGEONS_JS
-#define DUNGEONS_JS
+#pragma once
 
 #include "../../utils/base.js"
 
@@ -59,5 +56,4 @@ function HddDungeon(){
 }
 Hdd.prototype = new Dungeon;
 
-#endif
 

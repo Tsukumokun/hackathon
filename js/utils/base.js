@@ -17,9 +17,7 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: trace.js guid.js
-#ifndef BASE_JS
-#define BASE_JS
+#pragma once
 
 #include "trace.js"
 #include "guid.js"
@@ -53,4 +51,3 @@ Base.prototype.instanceOf = function(constructor)
 		return false;
 }
 
-#endif

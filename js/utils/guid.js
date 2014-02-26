@@ -16,8 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
-#ifndef GUID_JS
-#define GUID_JS
+#pragma once
 
 function guid(){
     var d = new Date().getTime();
@@ -32,4 +31,3 @@ function guid(){
 	return guid;
 }
 
-#endif

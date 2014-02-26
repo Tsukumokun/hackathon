@@ -17,9 +17,7 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: base.js
-#ifndef BANK_JS
-#define BANK_JS
+#pragma once
 
 #include "../../utils/base.js"
 
@@ -153,6 +151,4 @@ Bank.prototype.log_stats = function(){
         "primes=" + this.primes_current
     );
 }
-
-#endif
 

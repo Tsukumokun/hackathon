@@ -17,10 +17,7 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: base.js
-
-#ifndef COMPONENTS_JS
-#define COMPONENTS_JS
+#pragma once
 
 #include "../../utils/base.js"
 
@@ -69,4 +66,3 @@ function Hdd(){
 }
 Hdd.prototype = new Component;
 
-#endif

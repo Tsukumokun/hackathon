@@ -17,9 +17,7 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: bank.js image_manager.js
-#ifndef RESOURCES_JS
-#define RESOURCES_JS
+#pragma once
 
 #include "../objects/bank.js"
 #include "../../utils/image-manager.js"
@@ -28,4 +26,3 @@ var BANK = new Bank();
 
 var IMAGE_MANAGER = new ImageManager();
 
-#endif

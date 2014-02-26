@@ -17,10 +17,7 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: browser.js
-
-#ifndef TRACE_JS
-#define TRACE_JS
+#pragma once
 
 #include "browser.js"
 
@@ -234,4 +231,3 @@ function trace_text_disable()
 
 trace_all_enable();
 
-#endif

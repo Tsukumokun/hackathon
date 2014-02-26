@@ -17,10 +17,7 @@
 // along with this program.  If not, see <http:// www.gnu.org/licenses/>
 //
 
-//REQUIRE: trace.js
-
-#ifndef IMAGE_MANAGER_JS
-#define IMAGE_MANAGER_JS
+#pragma once
 
 #include "trace.js"
 
@@ -76,4 +73,3 @@ ImageManager.prototype.getImage = function(path)
 	return this.cache[path];
 }
 
-#endif
