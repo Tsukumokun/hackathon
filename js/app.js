@@ -23,3 +23,5 @@
 #include "libs/state-machine.min.js"
 
 #include "app/logic/timer.js"
+
+#include "app/front/map.js"
