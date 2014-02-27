@@ -19,13 +19,34 @@
 
 #pragma once
 
-#include "../../utils/mvcmodel.js"
+#include "base.js"
 
-function Map_Model(){
-    this.base = new MVC_Model;
+function Observer(sender)
+{
+    this.base = new Base;
     this.base();
+
+    this.sender     = sender;
+    this.listeners  = [];
 }
-Map_Model.prototype = new MVC_Model;
+Observer.prototype = new Base;
 
+Observer.prototype.attach = function(listener)
+{
+    this.listeners.push(listener);
+}
 
+Observer.prototype.detach = function(listener)
+{
+    var at = this.listeners.indexOf(listener);
+    this.listeners.splice(at,1);
+}
 
+Observer.prototype.notify = function(argv)
+{
+    listeners.forEach(function(){
+
+        this(this.sender,argv);
+
+    });
+}

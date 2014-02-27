@@ -19,13 +19,26 @@
 
 #pragma once
 
-#include "../../utils/mvcmodel.js"
+#include "base.js"
+#include "observer.js"
 
-function Map_Model(){
-    this.base = new MVC_Model;
+function MVC_Controller(model, view)
+{
+    this.base = new Base;
     this.base();
+
+    this.model = model;
+    this.view = view;
+
 }
-Map_Model.prototype = new MVC_Model;
+MVC_Controller.prototype = new Base;
 
+MVC_Controller.prototype.addItem = function(key,item)
+{
+    this.model.addItem(key,item);
+}
 
-
+MVC_Controller.prototype.removeItem = function(key)
+{
+    this.model.removeItem(key);
+}
