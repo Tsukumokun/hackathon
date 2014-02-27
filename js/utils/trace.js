@@ -229,5 +229,12 @@ function trace_text_disable()
 	internal_trace_log("Text Tracing Disabled");
 }
 
+window.onerror = function(errorMsg, url, lineNumber){
+	ERROR("Uncaught error occurred: " + errorMsg);
+	ERROR("    [Line "+line+"][File "+url+"]");
+    alert("Uncaught Error occured:\n"+errorMsg+"\nSee logs for more info.S");
+    return false;
+}
+
 trace_all_enable();
 
