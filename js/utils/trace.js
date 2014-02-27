@@ -231,8 +231,7 @@ function trace_text_disable()
 
 window.onerror = function(errorMsg, url, lineNumber){
 	ERROR("Uncaught error occurred: " + errorMsg);
-	ERROR("    [Line "+line+"][File "+url+"]");
-    alert("Uncaught Error occured:\n"+errorMsg+"\nSee logs for more info.S");
+    alert("Uncaught Error occured:\n"+errorMsg);
     return false;
 }
 
