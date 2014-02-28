@@ -1,10 +1,13 @@
-#pragma once
 
-@import url(http://fonts.googleapis.com/css?family=Exo:100,200,300,400,500,600,700,800,900);
+@mixin google-font($name,$tag)
+{
+	@import url("http://fonts.googleapis.com/css?family="+$name+":100,200,300,400,500,600,700,800,900");
 
-.font-exo{
-	font-family:"Exo",sans-serif;
+	.font-#{$tag}{
+		font-family:$name;
+	}
 }
+
 .font-thin{
 	font-weight:100;
 }

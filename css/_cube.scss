@@ -1,0 +1,65 @@
+@mixin cube($size:60px)
+{
+
+  @include keyframes(ht-cube-animation) 
+  {
+    from,to {}
+    16%     { @include transform( rotateY(-90deg)                 ); }
+    33%     { @include transform( rotateY(-90deg)  rotateZ(90deg) ); }
+    50%     { @include transform( rotateY(-180deg) rotateZ(90deg) ); }
+    66%     { @include transform( rotateY(90deg)   rotateX(90deg) ); }
+    83%     { @include transform( rotateX(90deg)                  ); }
+  }
+
+  .ht-cube
+  {
+    @include animation-name            ( ht-cube-animation );
+    @include animation-timing-function ( ease-in-out );
+    @include animation-duration        ( 12s );
+    @include animation-iteration-count ( infinite );
+    @include transform-style           ( preserve-3d );
+    @include transform-origin          ( $size $size 0px );
+  }
+
+  .ht-cube > *
+  {
+    @include     position(absolute);
+    width:       $size*2;
+    height:      $size*2;
+    border:      1px solid #ccc;
+    background:  rgba(255,255,255,0.8);
+    box-shadow:  inset 0 0 20px rgba(0,0,0,0.2);
+    text-align:  center;
+    font-size:   100px;
+  }
+
+  .ht-cube
+  {
+      .f1
+      {
+          @include transform( translateZ($size) );
+      }
+      .f2
+      {
+          @include transform( rotateY(90deg) translateZ($size) );
+      }
+      .f3
+      {
+          @include transform( rotateY(90deg) rotateX(90deg) translateZ($size) );
+      }
+      .f4
+      {
+          @include transform( rotateY(180deg) rotateZ(90deg) translateZ($size) );
+      }
+      .f5
+      {
+          @include transform( rotateY(-90deg) rotateZ(90deg) translateZ($size) );
+      }
+      .f6
+      {
+          @include transform( rotateX(-90deg) translateZ($size) );
+      }
+  }
+
+
+}
