@@ -27,5 +27,3 @@
 #include "app/logic/timer.js"
 
 #include "app/front/map.js"
-
-throw new Error("msg");

@@ -32,7 +32,6 @@ function MVC_Model()
 
     this.item_added_observer = new Observer(this);
     this.item_removed_observer = new Observer(this);
-
 }
 MVC_Model.prototype = new Base;
 

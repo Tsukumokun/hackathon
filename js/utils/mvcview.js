@@ -21,52 +21,29 @@
 
 #include "base.js"
 #include "observer.js"
+#include "trace.js"
 
-function MVC_View(model)
+function MVC_View()
 {
     this.base = new Base;
     this.base();
 
-    if (!model instanceof MVC_Model)
-    {
-        ERROR("MVC_View must take an MVC_Model, creating default");
-        this.model = new MVC_Model;
-    }
-    else
-    {
-        this.model = model;
-    }
-
-    var that = this;
-
-    this.model.item_added_observer.attach(function(sender,argv)
-    {
-        args = new argv;
-        args["type"] = "added";
-        that.rebuild(args);
-    });
-
-    this.model.item_added_observer.attach(function(sender,argv)
-    {
-        args = new argv;
-        args["type"] = "removed";
-        that.rebuild(args);
-    });
-
+    this.item_added_observer = new Observer(this);
+    this.item_removed_observer = new Observer(this);
 }
 MVC_View.prototype = new Base;
 
 MVC_View.prototype.addItem = function(key,item)
 {
-    this.model.addItem(key,item);
+    this.model.item_added_observer.notify({"key":key,"item":item});
 }
 
 MVC_View.prototype.removeItem = function(key)
 {
-    this.model.removeItem(key);
+    this.model.item_removed_observer.notify({"key":key});
 }
 
-MVC_View.prototype.rebuild = function(args)
+MVC_View.prototype.update = function(args)
 {
-    ERROR("MVC_View rebuild function not overridden");
+    throw new Error("MVC_View update function not overridden");
 }
