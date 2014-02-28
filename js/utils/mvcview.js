@@ -35,12 +35,12 @@ MVC_View.prototype = new Base;
 
 MVC_View.prototype.addItem = function(key,item)
 {
-    this.model.item_added_observer.notify({"key":key,"item":item});
+    this.item_added_observer.notify({"key":key,"item":item});
 }
 
 MVC_View.prototype.removeItem = function(key)
 {
-    this.model.item_removed_observer.notify({"key":key});
+    this.item_removed_observer.notify({"key":key});
 }
 
 MVC_View.prototype.update = function(args)
